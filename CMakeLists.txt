@@ -19,11 +19,7 @@ target_link_libraries(
   ${SDL2TTF_LIBRARIES}
   ${CMAKE_DL_LIBS})
 install(TARGETS FontCache DESTINATION lib)
-
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.pc.in
-    ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc DESTINATION share/pkgconfig)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SDL_FontCache.pc DESTINATION share/pkgconfig)
 
 option(SDL_FONTCACHE_BUILD_TESTS "Build tests" OFF)
 if(SDL_FONTCACHE_BUILD_TESTS)
